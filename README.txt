@@ -16,7 +16,8 @@ echo [2/3] Descargando modelo IA (4.5 GB, puede tardar varios minutos)...
 curl -L "https://huggingface.co/lmstudio-community/Meta-Llama-3-8B-Instruct-GGUF/resolve/main/Meta-Llama-3-8B-Instruct-Q4_K_M.gguf?download=true" -o modelo.gguf
 
 echo.
-echo [3/3] Listo! Iniciando agente...
+echo [3/3] Desbloqueando y iniciando agente...
+powershell -Command "Unblock-File -Path 'agente_local.exe'; Unblock-File -Path 'modelo.gguf'"
 start agente_local.exe
 
 echo.
